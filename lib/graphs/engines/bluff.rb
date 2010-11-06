@@ -1,5 +1,3 @@
-require 'active_support'
-
 module MetricFu
   class Grapher
     BLUFF_GRAPH_SIZE = "1000x600"

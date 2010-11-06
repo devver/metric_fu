@@ -6,6 +6,12 @@ rescue LoadError
   require 'active_support'
 end
 
+#allow activesupport 3.0 support, while still getting to_json
+unless Hash.new().respond_to?(:to_json)
+  require 'json'
+end
+
+
 # Load a few things to make our lives easier elsewhere.
 module MetricFu
   LIB_ROOT = File.dirname(__FILE__)

@@ -106,7 +106,7 @@ module MetricFu
             line = Line.new(raw_line, true).to_h
           end
         end
-        content.reject! {|line| line[:content].blank? }
+        content.reject! {|line| line[:content].nil? || line[:content].strip=='' }
         files[fname] = {:lines => content}
       end
       files
